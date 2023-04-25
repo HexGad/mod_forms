@@ -1,0 +1,67 @@
+.accordion-item,.accordion-item:first-of-type, .accordion-item:last-of-type {
+  border-radius: 0 !important;
+  border-right: none;
+  border-left: none;
+}
+
+.accordion-button:not(.collapsed) > svg {
+  transition: 0.3s;
+}
+
+.accordion-button:not(.collapsed) > svg {
+  color: var(--bs-accordion-active-color);
+}
+
+.accordion-button {
+  font-weight: bold;
+}
+
+.accordion-button:not(.collapsed) {
+  color: unset;
+  background-color: unset;
+  box-shadow: none;
+}
+//
+//.action-wrapper {
+//  width: 100%;
+//  background: #fff;
+//  position: sticky;
+//  top: 69px;
+//  z-index: 999;
+//  border-bottom: 1px solid #eee;
+//}
+.blocks {
+  .list-group {
+    li {
+      input {
+        outline: 0;
+        border-radius: 0.25rem;
+
+        &:hover, &:focus {
+          background-color: rgb(241 245 249);
+        }
+      }
+
+      .actions {
+        .btn-sm{
+          width: 25px !important;
+          height: 25px !important;
+        }
+        .configure-input {
+          color: rgb(37 99 235);
+        }
+
+        .make-required {
+          color: grey;
+          &.is_required{
+            color: rgb(239 68 68);
+          }
+        }
+
+        .hide-input {
+          color: rgb(37 99 235);
+        }
+      }
+    }
+  }
+}

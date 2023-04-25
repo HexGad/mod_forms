@@ -1,0 +1,11 @@
+{
+    "name": "Forms",
+    "alias": "forms",
+    "description": "",
+    "keywords": [],
+    "priority": 8,
+    "providers": [
+        "HexGad\\Forms\\Providers\\FormsServiceProvider"
+    ],
+    "files": []
+}
