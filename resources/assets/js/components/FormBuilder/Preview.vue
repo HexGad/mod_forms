@@ -1,5 +1,5 @@
 <template>
-  <div class="card min-w-50" :class="{'min-w-50': !embed, 'min-w-100': embed}">
+  <div class="card" :class="{'mw-50': !embed,'min-w-50': !embed, 'min-w-100': embed, 'mw-100': embed}">
     <div class="card-body">
       <h1>{{form.title}}</h1>
       <p v-html="form.description.replace(/(?:\r\n|\r|\n)/g, '<br>')"></p>
@@ -28,6 +28,8 @@ export default {
 }
 </script>
 
+<style>
 .card{
   transition: 0.2s;
 }
+</style>

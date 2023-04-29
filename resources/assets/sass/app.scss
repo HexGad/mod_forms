@@ -1,4 +1,4 @@
-.accordion-item,.accordion-item:first-of-type, .accordion-item:last-of-type {
+.accordion-item, .accordion-item:first-of-type, .accordion-item:last-of-type {
   border-radius: 0 !important;
   border-right: none;
   border-left: none;
@@ -21,6 +21,7 @@
   background-color: unset;
   box-shadow: none;
 }
+
 //
 //.action-wrapper {
 //  width: 100%;
@@ -43,23 +44,48 @@
       }
 
       .actions {
-        .btn-sm{
+        .btn-sm {
           width: 25px !important;
           height: 25px !important;
         }
+
         .configure-input {
           color: rgb(37 99 235);
         }
 
         .make-required {
           color: grey;
-          &.is_required{
+
+          &.is_required {
             color: rgb(239 68 68);
           }
         }
 
         .hide-input {
           color: rgb(37 99 235);
+        }
+      }
+    }
+  }
+}
+
+.blocks-modal {
+  .modal-dialog {
+    max-width: 50rem;
+  }
+
+  .add_block {
+    .blocks {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+
+      button {
+        margin: 5px;
+        background-color: rgb(248 250 252);
+        border: 1px solid #eee !important;
+
+        svg {
+          width: 2rem;
         }
       }
     }
