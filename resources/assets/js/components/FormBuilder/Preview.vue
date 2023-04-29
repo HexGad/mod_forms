@@ -2,7 +2,7 @@
   <div class="card" :class="{'mw-50': !embed,'min-w-50': !embed, 'min-w-100': embed, 'mw-100': embed}">
     <div class="card-body">
       <h1>{{form.title}}</h1>
-      <p v-html="form.description.replace(/(?:\r\n|\r|\n)/g, '<br>')"></p>
+      <p v-if="form.description" v-html="form.description.replace(/(?:\r\n|\r|\n)/g, '<br>')"></p>
       <div class="d-flex flex-wrap">
         <template v-for="property in form.properties">
             <FormInput :properties="property"></FormInput>

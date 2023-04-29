@@ -5,7 +5,9 @@
         <div class="card-body p-0 py-5">
           <h3 class="px-5 mb-0">{{form.title}}</h3>
           <div class="action-wrapper p-5">
-            <button class="btn btn-primary btn-sm w-100"> Save Changes</button>
+            <slot name="saveButton">
+              <button class="btn btn-primary btn-sm w-100"> Save Changes</button>
+            </slot>
           </div>
           <div class="sections">
             <div class="accordion">
@@ -217,28 +219,33 @@ import BlockEditor from "./BlockEditor.vue";
 
 export default {
   name: "Builder",
+  props:{
+    formData:{}
+  },
   components: {
     BlockEditor,
     Preview,
     draggable
+  },
+  created() {
+    this.form = Object.assign({}, this.formData)
   },
   data:()=>({
     drag: false,
     size: false,
     blocksModalIsVisible: false,
     blocks: blocks,
-    editedBlock:null,
-    form:{
-      title: 'Example Form',
-      description: '',
-      submit_button_text: 'Submit',
+    editedBlock: null,
+    form: {
+      title: 'Contact Form',
+      description: 'Please leave your message and we will contact you ASAP',
+      submit_button_text: 'Send',
       submit_action: 'redirect',
       redirection_url: '',
       submit_message: 'Amazing, we saved your answers. Thank you for your time and have a great day!',
-
       properties:[{"width":"100","hidden":false,"name":"Name","type":"text","uuid":"b0242838-85c5-46c4-8ae3-57cbe874ded9"},{"width":"100","type":"email","name":"Email","hidden":false,"uuid":"be35d32d-0ea4-496d-9f08-184a6f57e4f8"},{"width":"100","type":"phone","name":"Phone Number","hidden":false,"uuid":"94855665-3daa-4d47-80fb-24ac34d604a1"}],
     },
-    errors:{
+    errors: {
       name: null
     }
   }),
@@ -290,6 +297,14 @@ export default {
       return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
           (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
       );
+    }
+  },
+  watch:{
+    form:{
+      deep: true,
+      handler(form){
+         this.$emit('form', form);
+      }
     }
   }
 }

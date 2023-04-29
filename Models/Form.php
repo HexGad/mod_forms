@@ -9,5 +9,15 @@ class Form extends Model
 {
     use HasFactory;
 
-    protected $fillable = [];
+    protected $casts = ['properties' => 'json'];
+
+    protected $fillable = [
+        'title',
+        'description',
+        'submit_button_text',
+        'submit_action',
+        'redirection_url',
+        'submit_message',
+        'properties'
+    ];
 }

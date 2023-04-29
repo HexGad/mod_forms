@@ -14,7 +14,13 @@ class StoreFormsRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => ['required'],
+            'description' => ['sometimes'],
+            'submit_button_text' => ['required'],
+            'submit_action' => ['sometimes'],
+            'redirection_url' => ['sometimes'],
+            'submit_message' => ['sometimes'],
+            'properties' => ['array']
         ];
     }
 
