@@ -49,7 +49,7 @@ class FormsServiceProvider extends ServiceProvider
     protected function registerAssets()
     {
         $this->publishes([
-            module_path($this->moduleName, 'dist/build-forms') => public_path(),
+            module_path($this->moduleName, 'dist/build-forms') => public_path('build-forms'),
         ], 'modules-assets');
     }
 
