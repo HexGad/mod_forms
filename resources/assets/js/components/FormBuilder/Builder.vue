@@ -219,8 +219,8 @@ import BlockEditor from "./BlockEditor.vue";
 
 export default {
   name: "Builder",
-  props:{
-    formData:{}
+  props: {
+    formData: {}
   },
   components: {
     BlockEditor,
@@ -230,7 +230,7 @@ export default {
   created() {
     this.form = Object.assign({}, this.formData)
   },
-  data:()=>({
+  data: () => ({
     drag: false,
     size: false,
     blocksModalIsVisible: false,
