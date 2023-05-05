@@ -50,7 +50,7 @@ class FormsServiceProvider extends ServiceProvider
     {
         $this->publishes([
             module_path($this->moduleName, 'dist/build-forms') => public_path(),
-        ], 'assets');
+        ], 'modules-assets');
     }
 
 
